@@ -1,6 +1,3 @@
-/* =====================================================
-   BASE RESET
-===================================================== */
 * {
   margin: 0;
   padding: 0;
@@ -8,166 +5,121 @@
 }
 
 body {
-  font-family: "Segoe UI", Roboto, Arial, sans-serif;
-  background: #ffffff;
+  font-family: "Segoe UI", Arial, sans-serif;
   color: #222;
-  line-height: 1.7;
 }
 
-/* =====================================================
-   HEADER TOP – BOLD GOVERNMENT STRIP
-===================================================== */
+/* TOP STRIP */
 .header-top {
   background: linear-gradient(90deg, #0a5bd3, #083b8a);
-  color: #ffffff;
+  color: #fff;
   text-align: center;
-  padding: 10px 16px;
+  padding: 10px;
   font-size: 14px;
-  font-weight: 500;
-  line-height: 1.6;
 }
 
-/* =====================================================
-   MAIN HEADER (LOGO LEFT – MENU RIGHT)
-===================================================== */
+/* HEADER */
 .header {
-  background: #ffffff;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid #ddd;
 }
 
 .header-inner {
   max-width: 1200px;
   margin: auto;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 18px 16px;
+  align-items: center;
+  padding: 18px;
 }
 
 .logo {
   font-size: 26px;
-  font-weight: 700;
+  font-weight: bold;
   color: #0a5bd3;
-}
-
-/* NAV */
-.nav {
-  display: flex;
-  gap: 22px;
-  flex-wrap: wrap;
 }
 
 .nav a {
-  font-size: 15px;
-  font-weight: 500;
-  color: #333;
+  margin-left: 20px;
   text-decoration: none;
-  position: relative;
-}
-
-.nav a::after {
-  content: "›";
-  margin-left: 4px;
-  color: #0a5bd3;
+  color: #333;
+  font-weight: 500;
 }
 
 .nav a:hover {
   color: #0a5bd3;
 }
 
-/* =====================================================
-   HERO / SLIDER AREA (JIO STYLE – FULL DISPLAY)
-===================================================== */
-.section.center-text:first-of-type {
+/* HERO */
+.hero {
   min-height: 90vh;
+  background:
+    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+    url("../images/hero.jpg") center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(
-      rgba(0, 0, 0, 0.45),
-      rgba(0, 0, 0, 0.45)
-    ),
-    url("assets/images/hero-education.jpg") center/cover no-repeat;
-  color: #ffffff;
+  border-radius: 0 0 36px 36px;
 }
 
-.section.center-text:first-of-type h1 {
-  font-size: 46px;
-  font-weight: 700;
-  margin-bottom: 16px;
-}
-
-.section.center-text:first-of-type p {
-  font-size: 18px;
+.hero-content {
+  text-align: center;
+  color: #fff;
   max-width: 900px;
-  margin: auto;
 }
 
-/* =====================================================
-   BUTTONS (JIO FEEL)
-===================================================== */
+.hero h1 {
+  font-size: 46px;
+}
+
+.hero p {
+  margin-top: 15px;
+  font-size: 18px;
+}
+
+.hero-desc {
+  margin-top: 20px;
+}
+
+/* BUTTONS */
 .btn {
   display: inline-block;
-  padding: 14px 30px;
-  margin: 12px 8px;
-  font-size: 15px;
-  font-weight: 600;
+  margin: 12px;
+  padding: 14px 32px;
   border-radius: 30px;
   text-decoration: none;
-  transition: all 0.3s ease;
+  font-weight: 600;
 }
 
 .btn.primary {
   background: #0a5bd3;
-  color: #ffffff;
-}
-
-.btn.primary:hover {
-  background: #083b8a;
+  color: #fff;
 }
 
 .btn.secondary {
-  background: transparent;
-  color: #ffffff;
-  border: 2px solid #ffffff;
+  border: 2px solid #fff;
+  color: #fff;
 }
 
-.btn.secondary:hover {
-  background: #ffffff;
-  color: #0a5bd3;
-}
-
-/* =====================================================
-   RUNNING NOTIFICATION BAR
-===================================================== */
+/* NOTICE BAR */
 .notice-bar {
   background: #ffeb3b;
-  color: #000;
-  font-size: 15px;
-  font-weight: 600;
-  padding: 10px;
   overflow: hidden;
   white-space: nowrap;
 }
 
-.notice-bar::after {
-  content: "  Admissions Open | Kids & Foundational School Affiliation Priority | Skill-Integrated Curriculum | NEP 2020 & NCF 2023 Aligned  ";
+.notice-bar span {
   display: inline-block;
-  animation: scrollText 20s linear infinite;
+  padding: 10px 100%;
+  animation: marquee 18s linear infinite;
+  font-weight: bold;
 }
 
-@keyframes scrollText {
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(-100%);
-  }
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
 }
 
-/* =====================================================
-   SECTIONS – LEFT TEXT + RIGHT IMAGE (JIO STYLE)
-===================================================== */
+/* SECTIONS */
 .section {
   padding: 80px 20px;
 }
@@ -181,10 +133,41 @@ body {
   margin: auto;
 }
 
+.center {
+  text-align: center;
+}
+
+/* GRID */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+  margin-top: 40px;
+}
+
+.card {
+  background: #fff;
+  border: 2px solid #e3e6eb;
+  padding: 28px;
+  text-align: center;
+  font-weight: 600;
+  color: #0a5bd3;
+  text-decoration: none;
+  border-radius: 14px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  background: linear-gradient(135deg, #0a5bd3, #083b8a);
+  color: #fff;
+  transform: translateY(-6px);
+}
+
+/* IMAGE ROW */
 .section-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  gap: 50px;
   align-items: center;
 }
 
@@ -197,79 +180,52 @@ body {
 }
 
 .section-image {
-  width: 100%;
-  height: 320px;
-  background: #ddd;
-  border-radius: 12px;
+  height: 360px;
+  border-radius: 18px;
   background-size: cover;
   background-position: center;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.2);
 }
 
-/* =====================================================
-   CARDS
-===================================================== */
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 28px;
-  margin-top: 40px;
-}
-
-.card {
-  background: #ffffff;
-  padding: 28px;
-  border-radius: 14px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  font-size: 16px;
-  font-weight: 600;
-  color: #0a5bd3;
-  text-align: center;
-  text-decoration: none;
-}
-
-/* =====================================================
-   FOOTER – GOVERNMENT STYLE LINKS
-===================================================== */
+/* FOOTER */
 .footer {
   background: #0b1b33;
   padding: 40px 20px;
+  color: #fff;
 }
 
-.footer a {
-  color: #ffffff;
-  display: inline-block;
-  margin: 6px 12px;
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 30px;
+}
+
+.footer-links a {
+  display: block;
+  color: #fff;
+  margin: 6px 0;
   text-decoration: none;
-  font-size: 14px;
 }
 
-.footer a::before {
-  content: "➤ ";
-  animation: blink 1.2s infinite;
-}
-
-@keyframes blink {
-  50% {
-    opacity: 0.3;
-  }
+.footer-links a::before {
+  content: "➜ ";
+  color: #ffeb3b;
 }
 
 .footer-bottom {
   margin-top: 20px;
   text-align: center;
-  color: #cfd6e0;
   font-size: 13px;
+  color: #cfd6e0;
 }
 
-/* =====================================================
-   RESPONSIVE
-===================================================== */
+/* RESPONSIVE */
 @media (max-width: 900px) {
   .section-row {
     grid-template-columns: 1fr;
   }
 
-  .section.center-text:first-of-type h1 {
+  .hero h1 {
     font-size: 32px;
   }
 }
