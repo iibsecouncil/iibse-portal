@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IIBSE Affiliation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/content.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+
+<!-- HEADER TOP -->
+<div class="header-top">
+  <span data-content="headerTop.line1"></span><br>
+  <strong data-content="headerTop.line2"></strong><br>
+  <span data-content="headerTop.line3"></span><br>
+  <span data-content="headerTop.line4"></span>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="container header-inner">
+    <div class="logo">IIBSE</div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="curriculum.html">Curriculum</a>
+      <a href="affiliation.html">Affiliation</a>
+      <a href="admissions.html">Admissions</a>
+      <a href="verification.html">Verification</a>
+    </nav>
+  </div>
+</header>
+
+<!-- CONTENT -->
+<section class="section">
+  <div class="container">
+    <h1 data-content="affiliation.heading"></h1>
+    <p class="text" data-content="affiliation.intro"></p>
+
+    <h3>Who Can Apply</h3>
+    <ul id="affiliation-eligible"></ul>
+
+    <h3>Affiliation Process</h3>
+    <ul id="affiliation-process"></ul>
+  </div>
+</section>
+
+<footer class="footer">
+  <p class="footer-bottom">© IIBSE Examination Council</p>
+</footer>
+
+<script>
+  CONTENT.affiliation.eligible.forEach(i => {
+    document.getElementById("affiliation-eligible")
+      .insertAdjacentHTML("beforeend", `<li>${i}</li>`);
+  });
+
+  CONTENT.affiliation.process.forEach(i => {
+    document.getElementById("affiliation-process")
+      .insertAdjacentHTML("beforeend", `<li>${i}</li>`);
+  });
+</script>
+
+</body>
+</html>
