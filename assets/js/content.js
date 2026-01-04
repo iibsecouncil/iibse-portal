@@ -87,3 +87,41 @@ CONTENT.affiliation = {
     "Affiliation Approval & Support"
   ]
 };
+CONTENT.dknrsf = {
+  heading: "DKNRSF (NGO)",
+
+  intro:
+    "DKNRSF is a registered non-governmental organization (NGO) working in the areas of education, social development, skill promotion, and community upliftment across India.",
+
+  ngoWork:
+    "The organization actively supports educational research, community programs, teacher capacity building, and inclusive education initiatives, particularly in rural and underserved regions.",
+
+  schoolWing: {
+    heading: "DKNRSF – School Education Initiatives",
+    points: [
+      "Support to foundational and school education programs",
+      "Early childhood education and values-based learning",
+      "Academic mentoring and school capacity building",
+      "Focus on rural and semi-urban schools"
+    ]
+  },
+
+  collegeWing: {
+    heading: "DKNRSF – College & Higher Education Initiatives",
+    points: [
+      "Support for higher education institutions",
+      "Skill-oriented and employability programs",
+      "Industry collaboration and exposure",
+      "Research and innovation support"
+    ]
+  },
+
+  advisory: {
+    heading: "Advisory Role in IIBSE Council",
+    text:
+      "DKNRSF played an advisory and conceptual role during the early ideation of IIBSE Council, particularly in the areas of skill integration, inclusive education, and rural outreach."
+  },
+
+  disclaimer:
+    "IIBSE Examination Council operates as an independent and autonomous body. DKNRSF and DKNR Group of Institutions do not exercise any administrative, academic, or operational control over IIBSE Council."
+};
