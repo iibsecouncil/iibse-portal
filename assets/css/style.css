@@ -229,3 +229,16 @@ body {
     font-size: 32px;
   }
 }
+/* Founder image size control */
+.founder-box img {
+  max-width: 320px;
+  margin: 0 auto;
+  display: block;
+}
+.founder-box img {
+  max-width: 280px;
+  border-radius: 50%;
+  background: #fff;
+  padding: 6px;
+}
+
