@@ -125,4 +125,21 @@ CONTENT.dknrsf = {
   disclaimer:
     "IIBSE Examination Council operates as an independent and autonomous body. DKNRSF and DKNR Group of Institutions do not exercise any administrative, academic, or operational control over IIBSE Council."
 };
+/* ================= ABOUT PAGE IMAGES ================= */
+
+CONTENT.images = {
+  aboutOverview: "assets/images/about-1.jpg",
+  aboutHero: "assets/images/about-hero.jpg",
+  aboutFounder: "assets/images/about-founder.jpg",
+  aboutWhy: "assets/images/about-why.jpg",
+  aboutMessage: "assets/images/about-message.jpg",
+
+  curriculumOverview: "assets/images/curriculum-1.jpg",
+  curriculumHero: "assets/images/curriculum-hero.jpg",
+  curriculumPhilosophy: "assets/images/curriculum-2.jpg",
+  foundationalFocus: "assets/images/curriculum-3.jpg",
+  skillIntegration: "assets/images/curriculum-4.jpg",
+  curriculumOutcome: "assets/images/curriculum-5.jpg"
+};
+
 
