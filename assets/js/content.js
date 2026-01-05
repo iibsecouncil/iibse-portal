@@ -1,4 +1,4 @@
-const CONTENT = {
+var CONTENT = {
   headerTop: {
     line1: "Indian International Board of Skills School & Education Council",
     line2: "IIBSE EXAMINATION COUNCIL",
@@ -141,5 +141,6 @@ CONTENT.images = {
   skillIntegration: "assets/images/curriculum-4.jpg",
   curriculumOutcome: "assets/images/curriculum-5.jpg"
 };
+
 
 
