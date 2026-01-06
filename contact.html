@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact Us | IIBSE Council</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<!-- ================= HEADER TOP ================= -->
+<div class="header-top">
+  Indian International Board of Skills School & Education Council<br>
+  <strong>IIBSE EXAMINATION COUNCIL</strong><br>
+  (Autonomous Board for Holistic Academic & Skills Education aligned with NEP 2020)
+</div>
+
+<!-- ================= HEADER (CONTACT IN MENU) ================= -->
+<header class="header">
+  <div class="header-inner">
+    <div class="logo">IIBSE Council</div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="curriculum.html">Curriculum</a>
+      <a href="affiliation.html">Affiliation</a>
+      <a href="admissions.html">Admissions</a>
+      <a href="rural-education.html">Rural Education</a>
+      <a href="skills-courses.html">Skills</a>
+      <a href="verification.html">Verification</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Contact IIBSE Council</h1>
+    <p>We are here to guide schools, institutions, and learners</p>
+  </div>
+</section>
+
+<!-- ================= CONTACT DETAILS ================= -->
+<section class="section light">
+  <div class="container center">
+    <h2>Official Contact Information</h2>
+
+    <p>
+      <strong>📞 Contact Numbers</strong><br>
+      8425932737 | 7996106107
+    </p>
+
+    <p>
+      <strong>✉️ Email</strong><br>
+      iibsecouncil@gmail.com
+    </p>
+
+    <p>
+      For enquiries related to affiliation, admissions, curriculum,
+      skills programs, verification, or general support, please
+      submit the form below.
+    </p>
+  </div>
+</section>
+
+<!-- ================= CONTACT FORM ================= -->
+<section class="section">
+  <div class="container">
+    <h2 class="center">Send Us a Message</h2>
+
+    <form id="contactForm" class="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Email Address" required />
+      <input type="text" name="phone" placeholder="Contact Number" />
+      <textarea name="message" placeholder="Your Message" required></textarea>
+
+      <div class="center">
+        <button type="submit" class="btn primary">Submit</button>
+      </div>
+    </form>
+
+    <p id="formStatus" class="center" style="margin-top:15px;"></p>
+  </div>
+</section>
+
+<!-- ================= SIMPLE FRONTEND FORM HANDLER ================= -->
+<script>
+  document.getElementById("contactForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    document.getElementById("formStatus").innerHTML =
+      "Thank you for contacting IIBSE Council. Our team will respond shortly.";
+
+    this.reset();
+  });
+</script>
+
+<!-- ================= FOOTER (CONTACT LINK INCLUDED) ================= -->
+<footer class="footer">
+  <div class="container footer-links">
+    <div>
+      <a href="about.html">About IIBSE</a>
+      <a href="curriculum.html">Curriculum</a>
+      <a href="affiliation.html">Affiliation</a>
+    </div>
+    <div>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms & Conditions</a>
+      <a href="disclaimer.html">Disclaimer</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    © IIBSE Council. All Rights Reserved.
+  </div>
+</footer>
+
+</body>
+</html>
