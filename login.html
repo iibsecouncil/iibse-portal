@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>IIBSE Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<section class="section center">
+  <div class="contact-box">
+    <h2>IIBSE Portal Login</h2>
+    <p>Enter your registered email or username</p>
+
+    <div class="form-group">
+      <label>Email / Username</label>
+      <input type="text" id="loginEmail" placeholder="example@school.com" />
+    </div>
+
+    <button class="btn primary" onclick="sendPassword()">Send Password</button>
+
+    <div class="form-group" style="margin-top:20px;">
+      <label>Password</label>
+      <input type="password" id="loginPassword" placeholder="Enter password received in email" />
+    </div>
+
+    <button class="btn secondary" onclick="loginUser()">Login</button>
+
+    <div class="form-status" id="loginStatus"></div>
+  </div>
+</section>
+
+<script src="assets/js/auth.js"></script>
+</body>
+</html>
