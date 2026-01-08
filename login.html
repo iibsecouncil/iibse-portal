@@ -8,29 +8,103 @@
 </head>
 <body>
 
+<!-- ================= HEADER TOP ================= -->
+<div class="header-top">
+  Indian International Board of Skills School & Education Council<br>
+  <strong>IIBSE EXAMINATION COUNCIL</strong><br>
+  (Autonomous Board for Holistic Academic & Skills Education aligned with NEP 2020)
+</div>
+
+<!-- ================= HEADER ================= -->
+<header class="header">
+  <div class="header-inner">
+    <div class="logo">IIBSE Council</div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="curriculum.html">Curriculum</a>
+      <a href="affiliation.html">Affiliation</a>
+      <a href="admissions.html">Admissions</a>
+      <a href="verification.html">Verification</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ================= LOGIN SECTION ================= -->
 <section class="section center">
-  <div class="contact-box">
+  <div class="contact-box" style="max-width:420px;margin:auto;">
     <h2>IIBSE Portal Login</h2>
     <p>Enter your registered email or username</p>
 
     <div class="form-group">
       <label>Email / Username</label>
-      <input type="text" id="loginEmail" placeholder="example@school.com" />
+      <input
+        type="text"
+        id="loginEmail"
+        placeholder="example@school.com"
+        autocomplete="username"
+      />
     </div>
 
-    <button class="btn primary" onclick="sendPassword()">Send Password</button>
+    <button
+      type="button"
+      class="btn primary"
+      id="sendPasswordBtn"
+      style="width:100%;"
+    >
+      Send Password
+    </button>
 
     <div class="form-group" style="margin-top:20px;">
       <label>Password</label>
-      <input type="password" id="loginPassword" placeholder="Enter password received in email" />
+      <input
+        type="password"
+        id="loginPassword"
+        placeholder="Enter password received in email"
+        autocomplete="current-password"
+      />
     </div>
 
-    <button class="btn secondary" onclick="loginUser()">Login</button>
+    <button
+      type="button"
+      class="btn secondary"
+      id="loginBtn"
+      style="width:100%;"
+    >
+      Login
+    </button>
 
-    <div class="form-status" id="loginStatus"></div>
+    <div
+      class="form-status"
+      id="loginStatus"
+      style="margin-top:15px;font-weight:600;"
+    ></div>
   </div>
 </section>
 
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="container footer-links">
+    <div>
+      <a href="about.html">About IIBSE</a>
+      <a href="curriculum.html">Curriculum</a>
+    </div>
+    <div>
+      <a href="admissions.html">Admissions</a>
+      <a href="verification.html">Verification</a>
+    </div>
+    <div>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms & Conditions</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    © IIBSE Council. All Rights Reserved.
+  </div>
+</footer>
+
+<!-- ================= AUTH SCRIPT ================= -->
 <script src="assets/js/auth.js"></script>
+
 </body>
 </html>
