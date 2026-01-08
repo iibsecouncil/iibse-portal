@@ -1,39 +1,64 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("loginForm");
+// IIBSE AUTH MODULE (NO GLOBAL OVERRIDE)
+(function () {
+  console.log("IIBSE auth module loaded");
 
-  if (!form) return;
+  const sendBtn = document.getElementById("sendPasswordBtn");
+  const loginBtn = document.getElementById("loginBtn");
+  const status = document.getElementById("loginStatus");
 
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
+  if (!sendBtn || !loginBtn) return;
 
-    const email = document.getElementById("email").value.trim();
+  // SEND PASSWORD
+  sendBtn.addEventListener("click", async () => {
+    const email = document.getElementById("loginEmail").value.trim();
 
     if (!email) {
-      alert("Please enter your email");
+      status.textContent = "Please enter email or username";
+      status.style.color = "red";
       return;
     }
 
+    status.textContent = "Sending password...";
+    status.style.color = "black";
+
     try {
-      const response = await fetch(
+      const res = await fetch(
         "https://iibse-backend-ev2r.onrender.com/api/send-password",
         {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
+          headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ email })
         }
       );
 
-      const data = await response.json();
+      const data = await res.json();
 
       if (data.success) {
-        alert("Password sent to your email. Please check inbox/spam.");
+        status.textContent =
+          "Password sent to your email. Check Inbox / Spam.";
+        status.style.color = "green";
       } else {
-        alert(data.message || "Something went wrong");
+        status.textContent = data.message || "Request failed";
+        status.style.color = "red";
       }
-    } catch (err) {
-      alert("Server error. Please try again later.");
+    } catch (e) {
+      status.textContent = "Server error. Try again later.";
+      status.style.color = "red";
     }
   });
-});
+
+  // LOGIN (NEXT PHASE)
+  loginBtn.addEventListener("click", () => {
+    const pwd = document.getElementById("loginPassword").value.trim();
+
+    if (!pwd) {
+      status.textContent = "Please enter password";
+      status.style.color = "red";
+      return;
+    }
+
+    status.textContent =
+      "Login verification will be enabled in next phase.";
+    status.style.color = "orange";
+  });
+})();
