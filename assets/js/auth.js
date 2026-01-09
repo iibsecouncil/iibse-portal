@@ -1,64 +1,55 @@
-// IIBSE AUTH MODULE (NO GLOBAL OVERRIDE)
-(function () {
-  console.log("IIBSE auth module loaded");
+const express = require("express");
+const axios = require("axios");
+const router = express.Router();
 
-  const sendBtn = document.getElementById("sendPasswordBtn");
-  const loginBtn = document.getElementById("loginBtn");
-  const status = document.getElementById("loginStatus");
-
-  if (!sendBtn || !loginBtn) return;
-
-  // SEND PASSWORD
-  sendBtn.addEventListener("click", async () => {
-    const email = document.getElementById("loginEmail").value.trim();
-
+router.post("/send-password", async (req, res) => {
+  try {
+    const { email } = req.body;
     if (!email) {
-      status.textContent = "Please enter email or username";
-      status.style.color = "red";
-      return;
+      return res.json({ success: false, message: "Email required" });
     }
 
-    status.textContent = "Sending password...";
-    status.style.color = "black";
-
-    try {
-      const res = await fetch(
-        "https://iibse-backend-ev2r.onrender.com/api/send-password",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email })
+    await axios.post(
+      "https://api.zeptomail.in/v1.1/email",
+      {
+        bounce_address: "bounce@zeptomail.in",
+        from: {
+          address: process.env.EMAIL_FROM,
+          name: "IIBSE Council"
+        },
+        to: [
+          {
+            email_address: {
+              address: email,
+              name: email
+            }
+          }
+        ],
+        subject: "IIBSE Login Access",
+        textbody:
+          "Your login request has been received.\n\n" +
+          "Login verification will be enabled shortly.\n\n" +
+          "— IIBSE Council"
+      },
+      {
+        headers: {
+          Authorization: `Zoho-enczapikey ${process.env.ZEPTO_API_KEY}`,
+          "Content-Type": "application/json"
         }
-      );
-
-      const data = await res.json();
-
-      if (data.success) {
-        status.textContent =
-          "Password sent to your email. Check Inbox / Spam.";
-        status.style.color = "green";
-      } else {
-        status.textContent = data.message || "Request failed";
-        status.style.color = "red";
       }
-    } catch (e) {
-      status.textContent = "Server error. Try again later.";
-      status.style.color = "red";
-    }
-  });
+    );
 
-  // LOGIN (NEXT PHASE)
-  loginBtn.addEventListener("click", () => {
-    const pwd = document.getElementById("loginPassword").value.trim();
+    return res.json({
+      success: true,
+      message: "Password sent successfully"
+    });
+  } catch (err) {
+    console.error("ZEPTO API ERROR:", err.response?.data || err.message);
+    return res.json({
+      success: false,
+      message: "Email failed"
+    });
+  }
+});
 
-    if (!pwd) {
-      status.textContent = "Please enter password";
-      status.style.color = "red";
-      return;
-    }
-
-    status.textContent =
-      "Login verification will be enabled in next phase.";
-    status.style.color = "orange";
-  });
-})();
+module.exports = router;
