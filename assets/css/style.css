@@ -298,3 +298,30 @@ body {
 /* ================= CONTACT PAGE FORM END ================= */
 
 
+/* ===== MOBILE MENU FIX (NO DESIGN CHANGE) ===== */
+@media (max-width: 768px) {
+
+  .nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #fff;
+  }
+
+  .nav.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 26px;
+    cursor: pointer;
+    color: #0a5bd3;
+  }
+}
+
+/* Desktop: no change */
+.menu-toggle {
+  display: none;
+}
+
